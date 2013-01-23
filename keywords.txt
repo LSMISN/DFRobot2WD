@@ -1,0 +1,33 @@
+#######################################
+# Syntax Coloring Map for DFRobot2WD
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DFRobot2WD	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+controleMoteurs	KEYWORD2
+initialise	KEYWORD2
+pulseIRGauche	KEYWORD2
+pulseIRDroite	KEYWORD2
+bip	KEYWORD2
+lireBoutons	KEYWORD2
+allumeLED	KEYWORD2
+eteindLED	KEYWORD2
+lireLDR	KEYWORD2
+activeIRsensor	KEYWORD2
+resetCompteurIR	KEYWORD2
+lireCompteurIR	KEYWORD2
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+AVANT	LITERAL1
+ARRIERE	LITERAL1
+RECEPTEUR_IR	LITERAL1
