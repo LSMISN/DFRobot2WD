@@ -262,6 +262,18 @@ uint8_t DFRobot2WD::lireCompteurIR(void)
 	return compteurIR;
 }
 
+/**
+ * \fn void lireCapteurLigne(int numeroCapteurDeLigneIR)
+ * \brief lit les capteurs de ligne IR connectés sur les entrées analogiques 0 à 3. Les valeurs sont stockées dans le tableau ligneIR[].
+ *
+ * \param numéro d'un des 4 capteurs IR de ligne de 0 à 3
+ * \return la valeur lue par le capteur de ligne IR sous forme d'un entier 16bits 
+ */
+uint16_t DFRobot2WD::lireCapteurLigne(int numeroCapteurDeLigneIR)
+{
+	if((numeroCapteurDeLigneIR >= 0) && (numeroCapteurDeLigneIR <= 3))
+		return analogRead(numeroCapteurDeLigneIR);
+}
 ISR(PCINT0_vect)// interruption capteur IR
 {
   compteurIR++;

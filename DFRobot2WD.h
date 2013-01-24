@@ -60,10 +60,8 @@ class DFRobot2WD
   // uint16_t lireEncodeurD(void);
   // float lireFreqRG(void);
   // float lireFreqRD(void);
-  //uint16_t *tab[5] lireLigne(void);
+  uint16_t lireCapteurLigne(int numeroCapteurDeLigneIR);
   //private:
-  //uint16_t *cptLigneIR[5]; // tableau mémorisant la valeur des capteurs de ligne IR
- 
 };
 
 // class MsTimer2
