@@ -1,11 +1,11 @@
-/**
+ï»¿/**
  * \file DFRobot2WD.cpp
- * \brief Programme de tests.
- * \author o.eloi, Lycee Sud Medoc
+ * \brief bibliotheque arduino pour le robot DFRobot2WD miniQ
+ * \author o.e, Lycee Sud Medoc
  * \version 0.1
  * \date 9 janvier 2013
  *
- * Implémentation de la bibliothèque de fonctions pour le robot DFRobot 2WD miniQ
+ * Implementation de la bibliotheque de fonctions pour le robot DFRobot 2WD miniQ
  *
  */
 
@@ -21,34 +21,27 @@ static volatile uint16_t compteurIR; // le compteur d'impulsions IR
 // static volatile uint16_t compteurRG; // le compteur d'impulsions encodeur roue gauche
 // static volatile uint16_t compteurRG; // le compteur d'impulsions encodeur roue droite
 
+DFRobot2WD::DFRobot2WD(void)
 /**
- * \fn DFRobot2WD(void)
  * \brief constructeur d'un objet de la classe DFRobot2WD
  *
- * \param aucun
- * \return aucun
  */
-DFRobot2WD::DFRobot2WD(void)
 {
 }
+
+DFRobot2WD::~DFRobot2WD(void)
 /**
- * \fn ~DFRobot2WD(void)
  * \brief destructeur d'un objet de la classe DFRobot2WD
  *
- * \param aucun
- * \return aucun
  */
-DFRobot2WD::~DFRobot2WD(void)
 {
 }
-/**
- * \fn void initialise(void)
- * \brief initialise les entrées / sorties matérielles du DFRobot2WD
- *
- * \param aucun
- * \return aucun
- */
+
 void DFRobot2WD::initialise(void)
+/**
+ * \brief initialise les entrÃ©es / sorties matÃ©rielles du DFRobot2WD
+ *
+ */
 {
 	for(int i = 4 ; i <= 7; i++) pinMode(i,OUTPUT);
 	pinMode(L_IR,OUTPUT);//init the left transmitter pin
@@ -60,14 +53,17 @@ void DFRobot2WD::initialise(void)
 	digitalWrite(R_IR,HIGH);
 	digitalWrite(L_IR,HIGH);
 }
-/**
- * \fn void controleMoteurs(uint8_t M1_DIR,uint8_t M1_EN,uint8_t M2_DIR,uint8_t M2_EN)
- * \brief permet de régler la vitesse, et le sens de rotation des 2 moteurs du robot
- *
- * \param M1_DIR, M2_DIR : sens de rotation moteurs gauche & droit (prend la AVANT ou ARRIERE) M1_EN, M2_EN : entier pris entre 0 et 255 représentant la vitesse roue gauche (resp. roue droite)
- * \return aucun
- */
+
 void DFRobot2WD::controleMoteurs(uint8_t M1_DIR,uint8_t M1_EN,uint8_t M2_DIR,uint8_t M2_EN)
+/**
+ * \brief permet de rÃ©gler la vitesse, et le sens de rotation des 2 moteurs du robot
+ *
+ * \param M1_DIR : sens de rotation moteur gauche
+ * \param M1_EN : entier pris entre 0 et 255 reprÃ©sentant la vitesse de la roue gauche
+ * \param M2_DIR : sens de rotation moteur droit
+ * \param M2_EN : entier pris entre 0 et 255 reprÃ©sentant la vitesse de la roue droite
+ *
+ */
 {
 //////////M1////////////////////////
   if(M1_DIR==AVANT)//M1 motor direction
@@ -89,14 +85,12 @@ void DFRobot2WD::controleMoteurs(uint8_t M1_DIR,uint8_t M1_EN,uint8_t M2_DIR,uin
   else
     analogWrite(EN2,M2_EN);
 	}
-/**
- * \fn void pulseIRGauche(void)
- * \brief la LED infraRouge gauche emet 24 impulsions infrarouges.
- *
- * \param aucun
- * \return aucun
- */
+
 void DFRobot2WD::pulseIRGauche(void)
+/**
+ * \brief la LED infraRouge gauche Ã©met 24 impulsions infrarouges.
+ *
+ */
 {
 	  
   for(int i=0;i<24;i++)
@@ -107,14 +101,12 @@ void DFRobot2WD::pulseIRGauche(void)
     delayMicroseconds(8);
   }
  }
- /**
- * \fn void pulseIRDroite(void)
- * \brief la LED infraRouge droite emet 24 impulsions infrarouges.
- *
- * \param aucun
- * \return aucun
- */
+
  void DFRobot2WD::pulseIRDroite(void)
+ /**
+ * \brief la LED infraRouge droite Ã©met 24 impulsions infrarouges.
+ *
+ */
  {
   int i;
   for(i=0;i<24;i++)
@@ -125,14 +117,15 @@ void DFRobot2WD::pulseIRGauche(void)
     delayMicroseconds(8);
   }
 }
+
+void DFRobot2WD::bip(uint8_t nbreBip, uint8_t tempo)
 /**
- * \fn void bip(uint8_t nbreBip, uint8_t tempo)
  * \brief la LED infraRouge gauche emet 24 impulsions infrarouges.
  *
- * \param nbreBip : règle la durée du bip	tempo : règle la tonalité du bip
- * \return aucun
+ * \param nbreBip : rÃ¨gle la durÃ©e du bip
+ * \param tempo : rÃ¨gle la tonalitÃ© du bip
+ *
  */
-void DFRobot2WD::bip(uint8_t nbreBip, uint8_t tempo)
 {
 	for(int i=0;i<nbreBip;i++)
     {
@@ -142,26 +135,24 @@ void DFRobot2WD::bip(uint8_t nbreBip, uint8_t tempo)
       delay(tempo);
     }
 }
-/**
- * \fn float lireLDR(void)
- * \brief la LED infraRouge gauche emet 24 impulsions infrarouges.
- *
- * \param aucun
- * \return un réel (float) image de la luminosité captée par l'avant du robot
- */
+
 float DFRobot2WD::lireLDR(void)
+/**
+ * \brief la LED infraRouge gauche emet 24 impulsions infrarouges.
+ * \return un rÃ©el (float) image de la luminositÃ© captÃ©e par l'avant du robot
+ *
+ */
 {
 	float lecture = analogRead(LDR);
 	return lecture;
 }
-/**
- * \fn uint8_t lireBoutons(void)
- * \brief renvoie lequel des boutons est appuyé
- *
- * \param aucun
- * \return 0: aucune touche		1: touche1(Key1) appuyée	2: touche1(Key2) appuyée	3: touche1(Key3) appuyée
- */
+
 uint8_t DFRobot2WD::lireBoutons(void)
+/**
+ * \brief renvoie lequel des boutons est appuyÃ©
+ * \return 0: aucune touche		1: touche1(Key1) appuyÃ©e	2: touche1(Key2) appuyÃ©e	3: touche1(Key3) appuyÃ©e
+ *
+ */
 {
 	float data = analogRead(TOUCHES);
 	data = ((data*5.0)/1024.0);
@@ -188,14 +179,14 @@ uint8_t DFRobot2WD::lireBoutons(void)
 					return 3;
 				}
  }
+
+ void DFRobot2WD::allumeLED(uint8_t couleurLed)
  /**
- * \fn void allumeLED(uint8_t couleurLed)
  * \brief allume une des 2 LEDS (verte ou rouge)
  *
  * \param couleurLed prend ROUGE ou VERTE
- * \return aucun
+ *
  */
- void DFRobot2WD::allumeLED(uint8_t couleurLed)
  {
 	switch(couleurLed)
 	{
@@ -207,14 +198,14 @@ uint8_t DFRobot2WD::lireBoutons(void)
 			break;
 	}
 }
-/**
- * \fn void eteinsLED(uint8_t couleurLed)
+
+void DFRobot2WD::eteinsLED(uint8_t couleurLed)
+ /**
  * \brief eteins une des 2 LEDS (verte ou rouge)
  *
  * \param couleurLed prend ROUGE ou VERTE
- * \return aucun
+ *
  */
-void DFRobot2WD::eteinsLED(uint8_t couleurLed)
  {
 	switch(couleurLed)
 	{
@@ -226,53 +217,47 @@ void DFRobot2WD::eteinsLED(uint8_t couleurLed)
 			break;
 	}
 }
-/**
- * \fn void activeIRsensor(void)
- * \brief active le capteur infraRouge à l'avant du robot, enclenche le processus de comptage des impulsions captées.
- *
- * \param aucun
- * \return aucun
- */
+
 void DFRobot2WD::activeIRsensor(void)
+/**
+ * \brief active le capteur infraRouge Ã  l'avant du robot, enclenche le processus de comptage des impulsions captÃ©es.
+ *
+ */
 {
   PCICR = 0X01; // active les interruptions sur changement pour les broches PCINT[7:0]
-  PCMSK0 = 0X01;// valide que l'entrée PCINT0 (celle du capteur IR)
+  PCMSK0 = 0X01;// valide que l'entrÃ©e PCINT0 (celle du capteur IR)
   sei(); //active les interruptions
 }
-/**
- * \fn void resetCompteurIR(void)
- * \brief remise à zéro du compteur d'impulsions captées sur le capteur infrarouge.
- *
- * \param aucun
- * \return aucun
- */
+
 void DFRobot2WD::resetCompteurIR(void)
+/**
+ * \brief remise Ã  zÃ©ro du compteur d'impulsions captÃ©es sur le capteur infrarouge.
+ *
+ */
 {
 	compteurIR = 0;
 }
-/**
- * \fn uint8_t lireCompteurIR(void)
- * \brief donne la valeur du compteur d'impulsions captées sur le capteur infrarouge.
- *
- * \param aucun
- * \return un octet représentant le nombre d'impulsions infrarouge reçues
- */
+
 uint8_t DFRobot2WD::lireCompteurIR(void)
+/**
+ * \brief donne la valeur du compteur d'impulsions captÃ©es sur le capteur infrarouge.
+ * \return un octet reprÃ©sentant le nombre d'impulsions infrarouge reÃ§ues
+ *
+ */
 {
 	return compteurIR;
 }
 
+float DFRobot2WD::lireCapteurLigne(int numeroCapteurDeLigneIR)
 /**
- * \fn void lireCapteurLigne(int numeroCapteurDeLigneIR)
- * \brief lit les capteurs de ligne IR connectés sur les entrées analogiques 0 à 3. Les valeurs sont stockées dans le tableau ligneIR[].
+ * \brief lit les capteurs de ligne IR connectÃ©s sur les entrÃ©es analogiques 0 Ã  3. 
+ * \param numeroCapteurDeLigneIR : numÃ©ro d'un des 4 capteurs IR de ligne de 0 Ã  3
+ * \return la tension lue par le image de la source IR rÃ©flÃ©chie sous forme d'un float.
  *
- * \param numéro d'un des 4 capteurs IR de ligne de 0 à 3
- * \return la valeur lue par le capteur de ligne IR sous forme d'un entier 16bits 
  */
-uint16_t DFRobot2WD::lireCapteurLigne(int numeroCapteurDeLigneIR)
 {
 	if((numeroCapteurDeLigneIR >= 0) && (numeroCapteurDeLigneIR <= 3))
-		return analogRead(numeroCapteurDeLigneIR);
+		return (analogRead(numeroCapteurDeLigneIR)*5)/1024;
 }
 ISR(PCINT0_vect)// interruption capteur IR
 {
@@ -280,26 +265,21 @@ ISR(PCINT0_vect)// interruption capteur IR
 }
 // /**
  // * \fn void activeEncodeurs(void)
- // * \brief active la lecture des encodeurs présents sur les roues gauches et droites, enclenche le processus de comptage des impulsions captées.
- // *
- // * \param aucun
- // * \return aucun
+ // * \brief active la lecture des encodeurs prÃ©sents sur les roues gauches et droites, enclenche le processus de comptage des impulsions captÃ©es.
  // */
 // void DFRobot2WD::activeEncodeurs(void)
 // {
 	// masquer l'interruption sur INT0
 	// masquer l'interruption sur INT1
-	// activer le timer2 (va servir à déterminer la vitesse de rotation)
-	// le faire déborder toutes les 500ms
+	// activer le timer2 (va servir Ã  dÃ©terminer la vitesse de rotation)
+	// le faire dÃ©border toutes les 500ms
 	// activer les interruption
 	
 // }
 // /**
  // * \fn uint16_t lireEncodeurG(void)
- // * \brief donne la valeur du compteur d'impulsions captées sur la roue gauche.
- // *
- // * \param aucun
- // * \return un entier sur 16bits représentant le nombre d'impulsions comptabilisées sur la roue gauche
+ // * \brief donne la valeur du compteur d'impulsions captÃ©es sur la roue gauche.
+  // * \return un entier sur 16bits reprÃ©sentant le nombre d'impulsions comptabilisÃ©es sur la roue gauche
  // */
 // uint16_t DFRobot2WD::lireEncodeurG(void)
 // {
@@ -307,10 +287,8 @@ ISR(PCINT0_vect)// interruption capteur IR
 // }
 // /**
  // * \fn uint16_t lireEncodeurD(void)
- // * \brief donne la valeur du compteur d'impulsions captées sur la roue droite
- // *
- // * \param aucun
- // * \return un entier sur 16bits représentant le nombre d'impulsions comptabilisées sur la roue droite.
+ // * \brief donne la valeur du compteur d'impulsions captÃ©es sur la roue droite
+ // * \return un entier sur 16bits reprÃ©sentant le nombre d'impulsions comptabilisÃ©es sur la roue droite.
  // */
 // uint16_t DFRobot2WD::lireEncodeurD(void)
 // {
@@ -318,29 +296,25 @@ ISR(PCINT0_vect)// interruption capteur IR
 // }
 // /**
  // * \fn float lireFreqRG(void)
- // * \brief donne la fréquence de rotation de la roue gauche en tour/min
- // *
- // * \param aucun
-  // \return un réel(float) indiquant la fréquence de rotation de la roue gauche en tour/min
+ // * \brief donne la frÃ©quence de rotation de la roue gauche en tour/min
+  // \return un rÃ©el(float) indiquant la frÃ©quence de rotation de la roue gauche en tour/min
  // */
 // float DFRobot2WD::lireFreqRG(void)
 // {}
 // /**
  // * \fn float lireFreqRD(void)
- // * \brief donne la fréquence de rotation de la roue droite en tour/min
- // *
- // * \param aucun
-  // \return un réel(float) indiquant la fréquence de rotation de la roue droite en tour/min
+ // * \brief donne la frÃ©quence de rotation de la roue droite en tour/min
+  // \return un rÃ©el(float) indiquant la frÃ©quence de rotation de la roue droite en tour/min
  // */
 // float DFRobot2WD::lireFreqRD(void)
 // {}
 
 // ISR(INT0_vect)// interruption encodeur gauche
 // {
-  // compteurRG++; // on incrémente le compteur de la roue gauche
+  // compteurRG++; // on incrÃ©mente le compteur de la roue gauche
 // }
 
 // ISR(INT1_vect)// interruption encodeur droite
 // {
-  // compteurRD++;// on incrémente le compteur de la roue droite
+  // compteurRD++;// on incrÃ©mente le compteur de la roue droite
 // }

@@ -24,7 +24,7 @@ lireLDR	KEYWORD2
 activeIRsensor	KEYWORD2
 resetCompteurIR	KEYWORD2
 lireCompteurIR	KEYWORD2
-ireCapteurLigne	KEYWORD2
+lireCapteurLigne	KEYWORD2
 #######################################
 # Constants (LITERAL1)
 #######################################

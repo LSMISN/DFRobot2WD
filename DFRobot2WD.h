@@ -60,21 +60,7 @@ class DFRobot2WD
   // uint16_t lireEncodeurD(void);
   // float lireFreqRG(void);
   // float lireFreqRD(void);
-  uint16_t lireCapteurLigne(int numeroCapteurDeLigneIR);
+  float lireCapteurLigne(int numeroCapteurDeLigneIR);
   //private:
 };
-
-// class MsTimer2
-// {
-	// unsigned long msecs;
-	// void (*func)();
-	// extern volatile unsigned long count;
-	// extern volatile char overflowing;
-	// extern volatile unsigned int tcnt2;
-	
-	// void set(unsigned long ms, void (*f)());
-	// void start();
-	// void stop();
-	// void _overflow();
-// }
 #endif
