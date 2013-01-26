@@ -86,7 +86,7 @@
 0.1 \par
 }}DFRobot2WD}
 {\comment G\'E9n\'E9r\'E9 parDoxgyen. }
-{\creatim \yr2013\mo1\dy24\hr23\min8\sec10}
+{\creatim \yr2013\mo1\dy25\hr10\min10\sec6}
 }\pard\plain 
 \sectd\pgnlcrm
 {\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
@@ -113,8 +113,8 @@ Version 0.1\par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt C
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
 DFRobot2WD{\tc \v DFRobot2WD}\par \pard\plain 
-{\bkmkstart AAAAAAAABI}
-{\bkmkend AAAAAAAABI}
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
 \par \pard\plain 
 {
 \pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
@@ -132,7 +132,7 @@ Structures de donn\'E9es\par \pard\plain
 {
 \par
 \pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
-{\b {\b DFRobot2WD} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAS \\*MERGEFORMAT}{\fldrslt pagenum}}
+{\b {\b DFRobot2WD} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAT \\*MERGEFORMAT}{\fldrslt pagenum}}
 \par
 \par}
 \pard\plain \sect\sbkpage
@@ -161,18 +161,15 @@ Documentation des structures de donn\'E9es{\tc \v Documentation des structures d
 R\'E9f\'E9rence de la classe DFRobot2WD\par \pard\plain 
 {\tc\tcl2 \v DFRobot2WD}
 {\xe \v DFRobot2WD}
-{\bkmkstart AAAAAAAAAS}
-{\bkmkend AAAAAAAAAS}
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Fonctions membres publiques\par
 \pard\plain 
 
 {
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-{\b DFRobot2WD} (){\bkmkstart AAAAAAAAAT}
-{\bkmkend AAAAAAAAAT}
-\par
+{\b DFRobot2WD} ()\par
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 constructeur d'un objet de la classe {\b DFRobot2WD} }{
@@ -185,7 +182,7 @@ constructeur d'un objet de la classe {\b DFRobot2WD} }{
 \par
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-destructeur d'un objet de la classe {\b DFRobot2WD} }{
+destructeur d'un objet de la classe {\b DFRobot2WD} non utilis\'E9e dans le programme }{
 }\par
 }}
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
@@ -196,10 +193,7 @@ permet de r\'E9gler la vitesse, et le sens de rotation des 2 moteurs du robot }{
 }\par
 }}
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-void {\b initialise} (void){\bkmkstart AAAAAAAAAV}
-{\bkmkend AAAAAAAAAV}
-\par
+void {\b initialise} (void)\par
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 initialise les entr\'E9es / sorties mat\'E9rielles du {\b DFRobot2WD} }{
@@ -207,22 +201,22 @@ initialise les entr\'E9es / sorties mat\'E9rielles du {\b DFRobot2WD} }{
 }}
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-void {\b pulseIRGauche} (void){\bkmkstart AAAAAAAAAW}
-{\bkmkend AAAAAAAAAW}
+void {\b pulseIRGauche} (void){\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
 \par
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-la LED infraRouge gauche \'E9met 24 impulsions infrarouges. }{
+la LED infraRouge gauche \'E9met 24 impulsions infrarouges. les LED infrarouges rentre dans le processus de d\'E9tection d'obstacles plac\'E9s face au robot exemple : terminator.pulseIRGauche(); // on envoie une salve if(terminator.lireCompteurIR() > 20) // si le nombre d'impulsion re\'E7u est sup\'E9rieur \'E0 20 // alors c'est qu'il y a un obstacle \'E0 gauche }{
 }\par
 }}
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-void {\b pulseIRDroite} (void){\bkmkstart AAAAAAAAAX}
-{\bkmkend AAAAAAAAAX}
+void {\b pulseIRDroite} (void){\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
 \par
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-la LED infraRouge droite \'E9met 24 impulsions infrarouges. }{
+la LED infraRouge droite \'E9met 24 impulsions infrarouges. les LED infrarouges rentre dans le processus de d\'E9tection d'obstacles plac\'E9s face au robot exemple : terminator.pulseIRDroite(); // on envoie une salve if(terminator.lireCompteurIR() > 20) // si le nombre d'impulsion re\'E7u est sup\'E9rieur \'E0 20 // alors c'est qu'il y a un obstacle \'E0 droite }{
 }\par
 }}
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
@@ -262,22 +256,19 @@ la LED infraRouge gauche emet 24 impulsions infrarouges. }{
 }}
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
 
-void {\b activeIRsensor} (void){\bkmkstart AAAAAAAAAY}
-{\bkmkend AAAAAAAAAY}
+void {\b activeIRsensor} (void){\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
 \par
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-active le capteur infraRouge \'E0 l'avant du robot, enclenche le processus de comptage des impulsions capt\'E9es. }{
+active le capteur infraRouge \'E0 l'avant du robot, enclenche le processus de comptage des impulsions capt\'E9es. L'appel \'E0 cette fonction est n\'E9cessaire en cas d'utilisation du r\'E9cepteur infrarouge (ce dernier \'E9tant g\'E9r\'E9 par interruption) L'appel \'E0 cette fonction permet d'acc\'E9der au compteur d'impulsions infrarouges re\'E7ues sur le r\'E9cepteur. exemple: terminator.activeIRsensor(); int nombreImpulsionsRecus = terminator.lireCompteurIR(); }{
 }\par
 }}
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-void {\b resetCompteurIR} (void){\bkmkstart AAAAAAAAAZ}
-{\bkmkend AAAAAAAAAZ}
-\par
+void {\b resetCompteurIR} (void)\par
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
-remise \'E0 z\'E9ro du compteur d'impulsions capt\'E9es sur le capteur infrarouge. }{
+remise \'E0 z\'E9ro du compteur d'impulsions capt\'E9es sur le capteur infrarouge. Il est n\'E9cessaire d'avoir activ\'E9 le capteur infrarouge \'E0 l'aide de la fonction activeIRsensor pour utiliser cette fonction. }{
 }\par
 }}
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
@@ -297,6 +288,27 @@ lit les capteurs de ligne IR connect\'E9s sur les entr\'E9es analogiques 0 \'E0 
 }
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Documentation des constructeurs et destructeur\par
+\pard\plain 
+{\xe \v DFRobot2WD\:DFRobot2WD}
+{\xe \v DFRobot2WD\:DFRobot2WD}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b DFRobot2WD} (void )}}
+\par
+{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+constructeur d'un objet de la classe {\b DFRobot2WD} }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+permet de cr\'E9er une variable associ\'E9e au robot exemple : {\b DFRobot2WD} terminator; \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 Documentation des fonctions membres\par
 \pard\plain 
 {\xe \v allumeLED\:DFRobot2WD}
@@ -305,8 +317,8 @@ Documentation des fonctions membres\par
 {\b 
 void allumeLED (uint8_t {\i couleurLed})}}
 \par
-{\bkmkstart AAAAAAAABA}
-{\bkmkend AAAAAAAABA}
+{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -321,7 +333,7 @@ Param\'E8tres:\par}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{{\i couleurLed} \cell }{prend ROUGE ou VERTE \cell }
+{{\i couleurLed} \cell }{prend ROUGE ou VERTE exemple : terminator.allumeLED(ROUGE); terminator.allumeLED(VERTE); \cell }
 {\row }
 }
 }}
@@ -331,8 +343,8 @@ Param\'E8tres:\par}
 {\b 
 void bip (uint8_t {\i nbreBip}, uint8_t {\i tempo})}}
 \par
-{\bkmkstart AAAAAAAABB}
-{\bkmkend AAAAAAAABB}
+{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -353,9 +365,10 @@ Param\'E8tres:\par}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{{\i tempo} \cell }{: r\'E8gle la tonalit\'E9 du bip \cell }
+{{\i tempo} \cell }{: r\'E8gle la tonalit\'E9 du bip\cell }
 {\row }
 }
+Changer les 2 valeurs pour avoir diff\'E9rents types de tonalit\'E9s exemple : terminator.bip(10,80); \par
 }}
 {\xe \v controleMoteurs\:DFRobot2WD}
 {\xe \v DFRobot2WD\:controleMoteurs}
@@ -363,8 +376,8 @@ Param\'E8tres:\par}
 {\b 
 void controleMoteurs (uint8_t {\i M1_DIR}, uint8_t {\i M1_EN}, uint8_t {\i M2_DIR}, uint8_t {\i M2_EN})}}
 \par
-{\bkmkstart AAAAAAAABC}
-{\bkmkend AAAAAAAABC}
+{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -397,9 +410,10 @@ Param\'E8tres:\par}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{{\i M2_EN} \cell }{: entier pris entre 0 et 255 repr\'E9sentant la vitesse de la roue droite \cell }
+{{\i M2_EN} \cell }{: entier pris entre 0 et 255 repr\'E9sentant la vitesse de la roue droite\cell }
 {\row }
 }
+On controle la rotation des 2 roues exemple : terminator.controleMoteurs(AVANT, 100, ARRIERE, 100); // le robot tourne sur lui-m\'EAme dans le sens horaire. \par
 }}
 {\xe \v eteinsLED\:DFRobot2WD}
 {\xe \v DFRobot2WD\:eteinsLED}
@@ -407,8 +421,8 @@ Param\'E8tres:\par}
 {\b 
 void eteinsLED (uint8_t {\i couleurLed})}}
 \par
-{\bkmkstart AAAAAAAABD}
-{\bkmkend AAAAAAAABD}
+{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
 {
 \pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
 \par
@@ -423,9 +437,26 @@ Param\'E8tres:\par}
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
 \clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
 \pard \widctlpar\intbl\adjustright
-{{\i couleurLed} \cell }{prend ROUGE ou VERTE \cell }
+{{\i couleurLed} \cell }{prend ROUGE ou VERTE exemple : terminator.eteinsLED(ROUGE); terminator.eteinsLED(VERTE); \cell }
 {\row }
 }
+}}
+{\xe \v initialise\:DFRobot2WD}
+{\xe \v DFRobot2WD\:initialise}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void initialise (void )}}
+\par
+{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+initialise les entr\'E9es / sorties mat\'E9rielles du {\b DFRobot2WD} }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+L'appel \'E0 cette fonction est n\'E9cessaire pour pouvoir commander le robot et acc\'E8der aux capteurs. on la placera dans la fonction setup() du programme principal exemple: void setup() \{ terminator.initialise(); \} \par
 }}
 {\xe \v lireBoutons\:DFRobot2WD}
 {\xe \v DFRobot2WD\:lireBoutons}
@@ -444,7 +475,7 @@ renvoie lequel des boutons est appuy\'E9 }}\par
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
-Renvoie:\par}\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 0: aucune touche 1: touche1(Key1) appuy\'E9e 2: touche1(Key2) appuy\'E9e 3: touche1(Key3) appuy\'E9e \par
+Renvoie:\par}\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid 0: aucune touche 1: touche1(Key1) appuy\'E9e 2: touche1(Key2) appuy\'E9e 3: touche1(Key3) appuy\'E9e L'appel \'E0 cette fonction permet de savoir \'E0 un instant donn\'E9 si un des boutons poussoirs est appuy\'E9e exemple : int idTouche = terminator.lireBoutons // la variable idTouche contient alors le num\'E9ro de la touche appuy\'E9e. \par
 }}}
 {\xe \v lireCapteurLigne\:DFRobot2WD}
 {\xe \v DFRobot2WD\:lireCapteurLigne}
@@ -472,8 +503,9 @@ Param\'E8tres:\par}
 {\row }
 }
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
-Renvoie:\par}\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid la tension lue par le image de la source IR r\'E9fl\'E9chie sous forme d'un float. \par
-}}}
+Renvoie:\par}\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid la tension lue par le image de la source IR r\'E9fl\'E9chie sous forme d'un float.\par
+}Il y a 4 capteurs \'E0 r\'E9flexion infrarouge sous l'avan du robot. Cette fonction permet de lire la valeur de la tension du capteur qui proportionnelle \'E0 la lumi\'E8re r\'E9fl\'E9chie sur le sol. En colorant le sol (ligne noir sur fond blanc par exemple), on peut d\'E9tecter le chemin \'E0 suivre. Exemple : float couleurSol = terminator.lireCapteurLigne(0); // stocke dans la variable une valeur image de la couleur (sombre ou claire) du sol \par
+}}
 {\xe \v lireCompteurIR\:DFRobot2WD}
 {\xe \v DFRobot2WD\:lireCompteurIR}
 \pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
@@ -491,8 +523,9 @@ donne la valeur du compteur d'impulsions capt\'E9es sur le capteur infrarouge. }
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
-Renvoie:\par}\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid un octet repr\'E9sentant le nombre d'impulsions infrarouge re\'E7ues \par
-}}}
+Renvoie:\par}\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid un octet repr\'E9sentant le nombre d'impulsions infrarouge re\'E7ues Il est n\'E9cessaire d'avoir activ\'E9 le capteur infrarouge \'E0 l'aide de la fonction activeIRsensor pour utiliser cette fonction.\par
+}exemple: terminator.activeIRsensor(); int nombreImpulsionsRecus = terminator.lireCompteurIR(); \par
+}}
 {\xe \v lireLDR\:DFRobot2WD}
 {\xe \v DFRobot2WD\:lireLDR}
 \pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
@@ -510,8 +543,25 @@ la LED infraRouge gauche emet 24 impulsions infrarouges. }}\par
 {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
 \par
 {{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
-Renvoie:\par}\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid un r\'E9el (float) image de la luminosit\'E9 capt\'E9e par l'avant du robot \par
+Renvoie:\par}\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid un r\'E9el (float) image de la luminosit\'E9 capt\'E9e par l'avant du robot On peut se servir de la LDR pour suivre ou chercher (ou fuir) une source lumineuse. exemple : float lumiereAmbiante = terminator.lireLDR(); \par
 }}}
+{\xe \v resetCompteurIR\:DFRobot2WD}
+{\xe \v DFRobot2WD\:resetCompteurIR}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void resetCompteurIR (void )}}
+\par
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+remise \'E0 z\'E9ro du compteur d'impulsions capt\'E9es sur le capteur infrarouge. Il est n\'E9cessaire d'avoir activ\'E9 le capteur infrarouge \'E0 l'aide de la fonction activeIRsensor pour utiliser cette fonction. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+exemple : terminator.resetCompteurIR(); \par
+}}
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
 La documentation de cette classe a \'E9t\'E9 g\'E9n\'E9r\'E9e \'E0 partir des fichiers suivants :{\par
 \pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
@@ -599,80 +649,33 @@ Macros\par
 
 {
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b EN1}\~ 6{\bkmkstart AAAAAAAAAD}
-{\bkmkend AAAAAAAAAD}
-\par
+#define {\b EN1}\~ 6\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b IN1}\~ 7{\bkmkstart AAAAAAAAAE}
-{\bkmkend AAAAAAAAAE}
-\par
+#define {\b IN1}\~ 7\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b EN2}\~ 5{\bkmkstart AAAAAAAAAF}
-{\bkmkend AAAAAAAAAF}
-\par
+#define {\b EN2}\~ 5\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b IN2}\~ 4{\bkmkstart AAAAAAAAAG}
-{\bkmkend AAAAAAAAAG}
-\par
+#define {\b IN2}\~ 4\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b AVANT}\~ 1{\bkmkstart AAAAAAAAAH}
-{\bkmkend AAAAAAAAAH}
-\par
+#define {\b AVANT}\~ 1\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b ARRIERE}\~ 0{\bkmkstart AAAAAAAAAI}
-{\bkmkend AAAAAAAAAI}
-\par
+#define {\b ARRIERE}\~ 0\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b RECEPTEUR_IR}\~ 8{\bkmkstart AAAAAAAAAJ}
-{\bkmkend AAAAAAAAAJ}
-\par
+#define {\b RECEPTEUR_IR}\~ 8\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b L_IR}\~ 9{\bkmkstart AAAAAAAAAK}
-{\bkmkend AAAAAAAAAK}
-\par
+#define {\b L_IR}\~ 9\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b R_IR}\~ 10{\bkmkstart AAAAAAAAAL}
-{\bkmkend AAAAAAAAAL}
-\par
+#define {\b R_IR}\~ 10\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b BUZZER}\~ 11{\bkmkstart AAAAAAAAAM}
-{\bkmkend AAAAAAAAAM}
-\par
+#define {\b BUZZER}\~ 11\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b LED_ROUGE}\~ 12{\bkmkstart AAAAAAAAAN}
-{\bkmkend AAAAAAAAAN}
-\par
+#define {\b LED_ROUGE}\~ 12\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b LED_VERTE}\~ 13{\bkmkstart AAAAAAAAAO}
-{\bkmkend AAAAAAAAAO}
-\par
+#define {\b LED_VERTE}\~ 13\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b Vr}\~ 5{\bkmkstart AAAAAAAAAP}
-{\bkmkend AAAAAAAAAP}
-\par
+#define {\b LDR}\~ 4\par
 \pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b LDR}\~ 4{\bkmkstart AAAAAAAAAQ}
-{\bkmkend AAAAAAAAAQ}
-\par
-\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
-
-#define {\b TOUCHES}\~ 5{\bkmkstart AAAAAAAAAR}
-{\bkmkend AAAAAAAAAR}
-\par
+#define {\b TOUCHES}\~ 5\par
 }
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
 \'C9num\'E9rations\par
@@ -683,6 +686,9 @@ Macros\par
 enum \{ {\b ROUGE}, 
 {\b VERTE}
  \}\par
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+couleurs des LED }}}
 }
 {\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
 \pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
@@ -701,6 +707,218 @@ Version:\par}\pard\plain \s61\li360\widctlpar\ql\adjustright \fs20\cgrid 0.1 \pa
 Date:\par}\pard\plain \s61\li360\widctlpar\ql\adjustright \fs20\cgrid 9 janvier 2013\par
 }Biblioth\'E8que de fonctions pour le robot DFRobot 2WD miniQ \par
 }}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Documentation des macros\par
+\pard\plain 
+{\xe \v ARRIERE\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:ARRIERE}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define ARRIERE\~ 0}}
+\par
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+s\'E9lection marche arri\'E8re \par
+}}
+{\xe \v AVANT\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:AVANT}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define AVANT\~ 1}}
+\par
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+s\'E9lection marche avant \par
+}}
+{\xe \v BUZZER\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:BUZZER}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define BUZZER\~ 11}}
+\par
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+buzzer connect\'E9 sur D11 \par
+}}
+{\xe \v EN1\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:EN1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define EN1\~ 6}}
+\par
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+commande vitesse moteur droit sur D6 \par
+}}
+{\xe \v EN2\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:EN2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define EN2\~ 5}}
+\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+commande vitesse moteur gauche sur D5 \par
+}}
+{\xe \v IN1\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:IN1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define IN1\~ 7}}
+\par
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+commande direction moteur droit sur D7 \par
+}}
+{\xe \v IN2\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:IN2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define IN2\~ 4}}
+\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+commande vitesse moteur gauche sur D4 \par
+}}
+{\xe \v L_IR\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:L_IR}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define L_IR\~ 9}}
+\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'E9metteur infra-rouge dgauche connect\'E9 sur D9 \par
+}}
+{\xe \v LDR\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:LDR}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define LDR\~ 4}}
+\par
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+LDR connect\'E9 sur A4 \par
+}}
+{\xe \v LED_ROUGE\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:LED_ROUGE}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define LED_ROUGE\~ 12}}
+\par
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+led rouge connect\'E9 sur D12 \par
+}}
+{\xe \v LED_VERTE\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:LED_VERTE}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define LED_VERTE\~ 13}}
+\par
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+led rouge connect\'E9 sur D13 \par
+}}
+{\xe \v R_IR\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:R_IR}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define R_IR\~ 10}}
+\par
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\'E9metteur infra-rouge droite connect\'E9 sur D10 \par
+}}
+{\xe \v RECEPTEUR_IR\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:RECEPTEUR_IR}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define RECEPTEUR_IR\~ 8}}
+\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+r\'E9cepteur infra-rouge connect\'E9 sur D8 \par
+}}
+{\xe \v TOUCHES\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:TOUCHES}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define TOUCHES\~ 5}}
+\par
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+boutons poussoirs S1, S2, S3 connect\'E9s sur A5 (pont diviseur de tension) \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Documentation du type de l'\'E9num\'E9ration\par
+\pard\plain 
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+anonymous enum}}
+\par
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+couleurs des LED }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Le {\b DFRobot2WD} miniQ poss\'E8de 2 LEDs commandables, une rouge, une verte valeurs \'E0 passer \'E0 la fonction allumeLED() exemple : monRobot.allumeLED(ROUGE); \par
+}{{{\b Valeurs \'E9num\'E9r\'E9es}}\par
+\pard\plain \s62\li720\widctlpar\ql\adjustright \fs20\cgrid {\xe \v VERTE\:DFRobot2WD.h}
+{\xe \v DFRobot2WD.h\:VERTE}
+{\b {\i VERTE{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+}}  {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+< pour allumer la led rouge < pour allumer la led verte \par
+}}}
 
 \pard\plain \sect\sbkpage
 \s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 

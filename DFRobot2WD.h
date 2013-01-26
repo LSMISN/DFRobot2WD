@@ -15,26 +15,46 @@
 #include <inttypes.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
-
-#define EN1 6//pin for run the right motor 
-#define IN1 7//pin for control right motor direction
-#define EN2 5//pin for run the left motor 
-#define IN2 4//pin for control left motor direction
-
-#define AVANT 1//go forward
-#define ARRIERE 0//go back
-
-#define RECEPTEUR_IR  8//IR receiver pin
-#define L_IR 9//left IR LED transmitter pin
-#define R_IR 10//right IR LED transmitter pin
-#define BUZZER 11//the buzzer pin
+/** commande vitesse moteur droit sur D6 */ 
+#define EN1 6
+/** commande direction moteur droit sur D7*/ 
+#define IN1 7
+/** commande vitesse moteur gauche sur D5*/ 
+#define EN2 5
+/** commande vitesse moteur gauche sur D4*/ 
+#define IN2 4
+/** sélection marche avant */ 
+#define AVANT 1
+/** sélection marche arrière */ 
+#define ARRIERE 0
+/** récepteur infra-rouge connecté sur D8 */ 
+#define RECEPTEUR_IR  8
+/** émetteur infra-rouge dgauche connecté sur D9 */ 
+#define L_IR 9
+/** émetteur infra-rouge droite connecté sur D10 */ 
+#define R_IR 10
+/** buzzer connecté sur D11 */ 
+#define BUZZER 11
+/** led rouge connecté sur D12 */ 
 #define LED_ROUGE 12//red led io pin
-#define LED_VERTE 13//green led io pin
-#define Vr   5//reference voltage
-#define LDR 4 // A4 recoit la moyenne des tensions LDR
+/** led rouge connecté sur D13 */ 
+#define LED_VERTE 13
+/** LDR connecté sur A4 */ 
+#define LDR 4
+/** boutons poussoirs S1, S2, S3 connectés sur A5 (pont diviseur de tension) */ 
 #define TOUCHES 5 // A5 recoit les touches S1, S2, S3
-
-enum {ROUGE, VERTE};
+/**
+ * 
+ * \brief couleurs des LED
+ *
+ *	Le DFRobot2WD miniQ possède 2 LEDs commandables, une rouge, une verte
+ * 	valeurs à passer à la fonction allumeLED()
+ *	exemple : 	monRobot.allumeLED(ROUGE);
+ */
+enum {
+	ROUGE, /** < pour allumer la led rouge*/
+	VERTE  /** < pour allumer la led verte*/
+};
 
 class DFRobot2WD
 {

@@ -25,6 +25,9 @@ DFRobot2WD::DFRobot2WD(void)
 /**
  * \brief constructeur d'un objet de la classe DFRobot2WD
  *
+ *	permet de créer une variable associée au robot
+ *	exemple : DFRobot2WD terminator;
+ *
  */
 {
 }
@@ -32,7 +35,7 @@ DFRobot2WD::DFRobot2WD(void)
 DFRobot2WD::~DFRobot2WD(void)
 /**
  * \brief destructeur d'un objet de la classe DFRobot2WD
- *
+ *	non utilisée dans le programme
  */
 {
 }
@@ -41,6 +44,14 @@ void DFRobot2WD::initialise(void)
 /**
  * \brief initialise les entrées / sorties matérielles du DFRobot2WD
  *
+ *	L'appel à cette fonction est nécessaire pour pouvoir commander le robot
+ *	et accèder aux capteurs.
+ *	on la placera dans la fonction setup() du programme principal
+ *	exemple:
+ *			void setup()
+ *			{
+ *				terminator.initialise();
+ *			}
  */
 {
 	for(int i = 4 ; i <= 7; i++) pinMode(i,OUTPUT);
@@ -62,6 +73,9 @@ void DFRobot2WD::controleMoteurs(uint8_t M1_DIR,uint8_t M1_EN,uint8_t M2_DIR,uin
  * \param M1_EN : entier pris entre 0 et 255 représentant la vitesse de la roue gauche
  * \param M2_DIR : sens de rotation moteur droit
  * \param M2_EN : entier pris entre 0 et 255 représentant la vitesse de la roue droite
+ *
+ *	On controle la rotation des 2 roues
+ *	exemple : terminator.controleMoteurs(AVANT, 100, ARRIERE, 100); // le robot tourne sur lui-même dans le sens horaire.
  *
  */
 {
@@ -89,7 +103,11 @@ void DFRobot2WD::controleMoteurs(uint8_t M1_DIR,uint8_t M1_EN,uint8_t M2_DIR,uin
 void DFRobot2WD::pulseIRGauche(void)
 /**
  * \brief la LED infraRouge gauche émet 24 impulsions infrarouges.
- *
+ *	les LED infrarouges rentre dans le processus de détection d'obstacles placés face au robot
+ *	exemple : 
+ *				terminator.pulseIRGauche(); // on envoie une salve
+ *				if(terminator.lireCompteurIR() > 20) // si le nombre d'impulsion reçu est supérieur à 20
+ *					// alors c'est qu'il y a un obstacle à gauche
  */
 {
 	  
@@ -105,7 +123,11 @@ void DFRobot2WD::pulseIRGauche(void)
  void DFRobot2WD::pulseIRDroite(void)
  /**
  * \brief la LED infraRouge droite émet 24 impulsions infrarouges.
- *
+ *	les LED infrarouges rentre dans le processus de détection d'obstacles placés face au robot
+ *	exemple : 
+ *				terminator.pulseIRDroite(); // on envoie une salve
+ *				if(terminator.lireCompteurIR() > 20) // si le nombre d'impulsion reçu est supérieur à 20
+ *					// alors c'est qu'il y a un obstacle à droite
  */
  {
   int i;
@@ -125,6 +147,8 @@ void DFRobot2WD::bip(uint8_t nbreBip, uint8_t tempo)
  * \param nbreBip : règle la durée du bip
  * \param tempo : règle la tonalité du bip
  *
+ *	Changer les 2 valeurs pour avoir différents types de tonalités
+ *	exemple : terminator.bip(10,80);
  */
 {
 	for(int i=0;i<nbreBip;i++)
@@ -140,7 +164,8 @@ float DFRobot2WD::lireLDR(void)
 /**
  * \brief la LED infraRouge gauche emet 24 impulsions infrarouges.
  * \return un réel (float) image de la luminosité captée par l'avant du robot
- *
+ *	On peut se servir de la LDR pour suivre ou chercher (ou fuir) une source lumineuse.
+ *  exemple : float lumiereAmbiante = terminator.lireLDR();
  */
 {
 	float lecture = analogRead(LDR);
@@ -151,7 +176,8 @@ uint8_t DFRobot2WD::lireBoutons(void)
 /**
  * \brief renvoie lequel des boutons est appuyé
  * \return 0: aucune touche		1: touche1(Key1) appuyée	2: touche1(Key2) appuyée	3: touche1(Key3) appuyée
- *
+ *	L'appel à cette fonction permet de savoir à un instant donné si un des boutons poussoirs est appuyée
+ *	exemple : int idTouche  = terminator.lireBoutons // la variable idTouche contient alors le numéro de la touche appuyée.
  */
 {
 	float data = analogRead(TOUCHES);
@@ -185,7 +211,9 @@ uint8_t DFRobot2WD::lireBoutons(void)
  * \brief allume une des 2 LEDS (verte ou rouge)
  *
  * \param couleurLed prend ROUGE ou VERTE
- *
+ *	exemple : 
+ * 				terminator.allumeLED(ROUGE);
+ * 				terminator.allumeLED(VERTE);
  */
  {
 	switch(couleurLed)
@@ -204,7 +232,9 @@ void DFRobot2WD::eteinsLED(uint8_t couleurLed)
  * \brief eteins une des 2 LEDS (verte ou rouge)
  *
  * \param couleurLed prend ROUGE ou VERTE
- *
+ *	exemple : 
+ * 				terminator.eteinsLED(ROUGE);
+ * 				terminator.eteinsLED(VERTE);
  */
  {
 	switch(couleurLed)
@@ -221,7 +251,11 @@ void DFRobot2WD::eteinsLED(uint8_t couleurLed)
 void DFRobot2WD::activeIRsensor(void)
 /**
  * \brief active le capteur infraRouge à l'avant du robot, enclenche le processus de comptage des impulsions captées.
- *
+ *	L'appel à cette fonction est nécessaire en cas d'utilisation du récepteur infrarouge (ce dernier étant géré par interruption)
+ *  L'appel à cette fonction permet d'accéder au compteur d'impulsions infrarouges reçues sur le récepteur.
+ *	exemple:
+ *				terminator.activeIRsensor();
+ *				int nombreImpulsionsRecus = terminator.lireCompteurIR();
  */
 {
   PCICR = 0X01; // active les interruptions sur changement pour les broches PCINT[7:0]
@@ -232,7 +266,9 @@ void DFRobot2WD::activeIRsensor(void)
 void DFRobot2WD::resetCompteurIR(void)
 /**
  * \brief remise à zéro du compteur d'impulsions captées sur le capteur infrarouge.
+ *	Il est nécessaire d'avoir activé le capteur infrarouge à l'aide de la fonction activeIRsensor pour utiliser cette fonction.
  *
+ *	exemple : terminator.resetCompteurIR();
  */
 {
 	compteurIR = 0;
@@ -242,7 +278,11 @@ uint8_t DFRobot2WD::lireCompteurIR(void)
 /**
  * \brief donne la valeur du compteur d'impulsions captées sur le capteur infrarouge.
  * \return un octet représentant le nombre d'impulsions infrarouge reçues
+ *	Il est nécessaire d'avoir activé le capteur infrarouge à l'aide de la fonction activeIRsensor pour utiliser cette fonction.
  *
+ *	exemple:
+ *				terminator.activeIRsensor();
+ *				int nombreImpulsionsRecus = terminator.lireCompteurIR();
  */
 {
 	return compteurIR;
@@ -253,6 +293,12 @@ float DFRobot2WD::lireCapteurLigne(int numeroCapteurDeLigneIR)
  * \brief lit les capteurs de ligne IR connectés sur les entrées analogiques 0 à 3. 
  * \param numeroCapteurDeLigneIR : numéro d'un des 4 capteurs IR de ligne de 0 à 3
  * \return la tension lue par le image de la source IR réfléchie sous forme d'un float.
+ *
+ *	Il y a 4 capteurs à réflexion infrarouge sous l'avan du robot.
+ * 	Cette fonction permet de lire la valeur de la tension du capteur qui proportionnelle à la lumière réfléchie sur le sol.
+ *	En colorant le sol (ligne noir sur fond blanc par exemple), on peut détecter le chemin à suivre.
+ * 	Exemple :
+ *				float couleurSol = terminator.lireCapteurLigne(0); // stocke dans la variable une valeur image de la couleur (sombre ou claire) du sol
  *
  */
 {
@@ -273,7 +319,7 @@ ISR(PCINT0_vect)// interruption capteur IR
 	// masquer l'interruption sur INT1
 	// activer le timer2 (va servir à déterminer la vitesse de rotation)
 	// le faire déborder toutes les 500ms
-	// activer les interruption
+	// activer les interruptions
 	
 // }
 // /**
