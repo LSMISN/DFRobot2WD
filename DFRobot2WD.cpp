@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \file DFRobot2WD.cpp
  * \brief bibliotheque arduino pour le robot DFRobot2WD miniQ
  * \author o.e, Lycee Sud Medoc
