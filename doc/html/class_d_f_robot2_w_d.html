@@ -141,6 +141,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:aa9d9400ca10243f78260dfb8708c095b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_f_robot2_w_d.html#aa9d9400ca10243f78260dfb8708c095b">lireCapteurLigne</a> (int numeroCapteurDeLigneIR)</td></tr>
 <tr class="memdesc:aa9d9400ca10243f78260dfb8708c095b"><td class="mdescLeft">&#160;</td><td class="mdescRight">lit les capteurs de ligne IR connectés sur les entrées analogiques 0 à 3.  <a href="#aa9d9400ca10243f78260dfb8708c095b">Plus de détails...</a><br/></td></tr>
 <tr class="separator:aa9d9400ca10243f78260dfb8708c095b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb304838b37324047ad57620c320a0d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_f_robot2_w_d.html#a0cb304838b37324047ad57620c320a0d">lireTelecommande</a> (void)</td></tr>
+<tr class="memdesc:a0cb304838b37324047ad57620c320a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie le code de la touche envoyé par la télécommande infrarouge  <a href="#a0cb304838b37324047ad57620c320a0d">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a0cb304838b37324047ad57620c320a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9611e8abfe3c2693f700601a4766e9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_f_robot2_w_d.html#aef9611e8abfe3c2693f700601a4766e9">lireTensionBatterie</a> (void)</td></tr>
+<tr class="memdesc:aef9611e8abfe3c2693f700601a4766e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">renvoie la valeur de la tension mesurée sur la batterie du robot  <a href="#aef9611e8abfe3c2693f700601a4766e9">Plus de détails...</a><br/></td></tr>
+<tr class="separator:aef9611e8abfe3c2693f700601a4766e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des constructeurs et destructeur</h2>
 <a class="anchor" id="a8c1e6ff7fb5536da4cdbe735216f280d"></a>
@@ -400,6 +406,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 </div>
 </div>
+<a class="anchor" id="a0cb304838b37324047ad57620c320a0d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t lireTelecommande </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie le code de la touche envoyé par la télécommande infrarouge </p>
+<dl class="section return"><dt>Renvoie</dt><dd>2 octets correspondant au code de la touche Cette fonction n'utilise pas le processus d'interruption</dd></dl>
+<p>exemple: int codeIR = terminator.lireTelecommande(); Serial.println(codeIR, HEX); </p>
+
+</div>
+</div>
+<a class="anchor" id="aef9611e8abfe3c2693f700601a4766e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float lireTensionBatterie </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>renvoie la valeur de la tension mesurée sur la batterie du robot </p>
+<dl class="section return"><dt>Renvoie</dt><dd>un flottant image de la tension</dd></dl>
+<p>exemple: float tensionBat = r2d2.lireTensionBatterie(); Serial.print("la tension de la batterie est de "); Serial.print(tensionBatterie); Serial.prinln(" V"); </p>
+
+</div>
+</div>
 <a class="anchor" id="a97a26dbb9fa69dca838d30e3a8f21ff9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -426,7 +472,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi Janvier 25 2013 10:10:06 pour DFRobot2WD par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi Février 21 2013 22:59:10 pour DFRobot2WD par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

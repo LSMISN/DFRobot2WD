@@ -37,7 +37,11 @@ void \hyperlink{class_d_f_robot2_w_d_a97a26dbb9fa69dca838d30e3a8f21ff9}{reset\-C
 uint8\-\_\-t \hyperlink{class_d_f_robot2_w_d_aade657e6ba709d065911d0e0cf00a3c3}{lire\-Compteur\-I\-R} (void)
 \begin{DoxyCompactList}\small\item\em donne la valeur du compteur d'impulsions captées sur le capteur infrarouge. \end{DoxyCompactList}\item 
 float \hyperlink{class_d_f_robot2_w_d_aa9d9400ca10243f78260dfb8708c095b}{lire\-Capteur\-Ligne} (int numero\-Capteur\-De\-Ligne\-I\-R)
-\begin{DoxyCompactList}\small\item\em lit les capteurs de ligne I\-R connectés sur les entrées analogiques 0 à 3. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em lit les capteurs de ligne I\-R connectés sur les entrées analogiques 0 à 3. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{class_d_f_robot2_w_d_a0cb304838b37324047ad57620c320a0d}{lire\-Telecommande} (void)
+\begin{DoxyCompactList}\small\item\em renvoie le code de la touche envoyé par la télécommande infrarouge \end{DoxyCompactList}\item 
+float \hyperlink{class_d_f_robot2_w_d_aef9611e8abfe3c2693f700601a4766e9}{lire\-Tension\-Batterie} (void)
+\begin{DoxyCompactList}\small\item\em renvoie la valeur de la tension mesurée sur la batterie du robot \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Documentation des constructeurs et destructeur}
@@ -203,7 +207,35 @@ la L\-E\-D infra\-Rouge gauche emet 24 impulsions infrarouges.
 \begin{DoxyReturn}{Renvoie}
 un réel (float) image de la luminosité captée par l'avant du robot On peut se servir de la L\-D\-R pour suivre ou chercher (ou fuir) une source lumineuse. exemple \-: float lumiere\-Ambiante = terminator.\-lire\-L\-D\-R(); 
 \end{DoxyReturn}
-\hypertarget{class_d_f_robot2_w_d_a97a26dbb9fa69dca838d30e3a8f21ff9}{\index{D\-F\-Robot2\-W\-D@{D\-F\-Robot2\-W\-D}!reset\-Compteur\-I\-R@{reset\-Compteur\-I\-R}}
+\hypertarget{class_d_f_robot2_w_d_a0cb304838b37324047ad57620c320a0d}{\index{D\-F\-Robot2\-W\-D@{D\-F\-Robot2\-W\-D}!lire\-Telecommande@{lire\-Telecommande}}
+\index{lire\-Telecommande@{lire\-Telecommande}!DFRobot2WD@{D\-F\-Robot2\-W\-D}}
+\subsubsection[{lire\-Telecommande}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t lire\-Telecommande (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_d_f_robot2_w_d_a0cb304838b37324047ad57620c320a0d}
+
+
+renvoie le code de la touche envoyé par la télécommande infrarouge 
+
+\begin{DoxyReturn}{Renvoie}
+2 octets correspondant au code de la touche Cette fonction n'utilise pas le processus d'interruption
+\end{DoxyReturn}
+exemple\-: int code\-I\-R = terminator.\-lire\-Telecommande(); Serial.\-println(code\-I\-R, H\-E\-X); \hypertarget{class_d_f_robot2_w_d_aef9611e8abfe3c2693f700601a4766e9}{\index{D\-F\-Robot2\-W\-D@{D\-F\-Robot2\-W\-D}!lire\-Tension\-Batterie@{lire\-Tension\-Batterie}}
+\index{lire\-Tension\-Batterie@{lire\-Tension\-Batterie}!DFRobot2WD@{D\-F\-Robot2\-W\-D}}
+\subsubsection[{lire\-Tension\-Batterie}]{\setlength{\rightskip}{0pt plus 5cm}float lire\-Tension\-Batterie (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_d_f_robot2_w_d_aef9611e8abfe3c2693f700601a4766e9}
+
+
+renvoie la valeur de la tension mesurée sur la batterie du robot 
+
+\begin{DoxyReturn}{Renvoie}
+un flottant image de la tension
+\end{DoxyReturn}
+exemple\-: float tension\-Bat = r2d2.\-lire\-Tension\-Batterie(); Serial.\-print(\char`\"{}la tension de la batterie est de \char`\"{}); Serial.\-print(tension\-Batterie); Serial.\-prinln(\char`\"{} V\char`\"{}); \hypertarget{class_d_f_robot2_w_d_a97a26dbb9fa69dca838d30e3a8f21ff9}{\index{D\-F\-Robot2\-W\-D@{D\-F\-Robot2\-W\-D}!reset\-Compteur\-I\-R@{reset\-Compteur\-I\-R}}
 \index{reset\-Compteur\-I\-R@{reset\-Compteur\-I\-R}!DFRobot2WD@{D\-F\-Robot2\-W\-D}}
 \subsubsection[{reset\-Compteur\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-Compteur\-I\-R (
 \begin{DoxyParamCaption}

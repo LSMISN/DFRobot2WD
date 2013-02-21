@@ -20,6 +20,8 @@
 static volatile uint16_t compteurIR; // le compteur d'impulsions IR
 // static volatile uint16_t compteurRG; // le compteur d'impulsions encodeur roue gauche
 // static volatile uint16_t compteurRG; // le compteur d'impulsions encodeur roue droite
+uint16_t Pulse_Width=0;
+uint16_t  ir_code=0x00;
 
 DFRobot2WD::DFRobot2WD(void)
 /**
@@ -308,6 +310,141 @@ float DFRobot2WD::lireCapteurLigne(int numeroCapteurDeLigneIR)
 ISR(PCINT0_vect)// interruption capteur IR
 {
   compteurIR++;
+}
+
+void DFRobot2WD::timer1_init(void)
+{
+  TCCR1A = 0X00; 
+  TCCR1B = 0X05;
+  TCCR1C = 0X00;
+  TCNT1 = 0X00;
+  TIMSK1 = 0X00;
+}
+
+uint16_t DFRobot2WD::lireTelecommande(void)
+/**
+ * \brief renvoie le code de la touche envoyé par la télécommande infrarouge
+ * \return 2 octets correspondant au code de la touche
+ *	Cette fonction n'utilise pas le processus d'interruption
+ *
+ *	exemple:
+ *				int codeIR = terminator.lireTelecommande();
+ *				Serial.println(codeIR, HEX);
+ */
+{ 
+  timer1_init();
+  remote_decode();
+  return ir_code;
+}
+float DFRobot2WD::lireTensionBatterie(void)
+/**
+ * \brief renvoie la valeur de la tension mesurée sur la batterie du robot
+ * \return un flottant image de la tension
+ *	
+ *
+ *	exemple:
+ *				float tensionBat = r2d2.lireTensionBatterie();
+ *				Serial.print("la tension de la batterie est de ");
+ *				Serial.print(tensionBatterie);
+ *				Serial.prinln(" V");
+ */
+{
+	return ((analogRead(TENSION_BATTERIE)*5*0.67)/1024);
+}
+char DFRobot2WD::logic_value()
+{
+    while(!(digitalRead(RECEPTEUR_IR))); // on attend le passage à 1
+     Pulse_Width=TCNT1; // on stocke la valeur du compteur
+     TCNT1=0; // on met le compteur à zéro 
+     if(Pulse_Width>=7&&Pulse_Width<=10) // si largeur comprise entre 7 et 10
+     {
+         while(digitalRead(RECEPTEUR_IR)); // on attend le passage à 0
+         Pulse_Width=TCNT1; // on stocke la valeur du compteur
+         TCNT1=0; // on remet le compteur a zero
+         if(Pulse_Width>=7&&Pulse_Width<=10) // largeur de l'impulsion à 1 entre 7 et 10 
+           return 0; // on a un '0' logique
+         else if(Pulse_Width>=25&&Pulse_Width<=27) // si largeur de l'impulsion '1' entre 25 et 27
+           return 1; // on a un '1' logique
+     }
+     return -1;
+}
+
+void DFRobot2WD::pulse_deal()
+{
+  int i;
+  
+  
+  for(i=0; i<8; i++)
+  {
+    if(logic_value() != 0)
+      return;
+  }
+  
+  for(i=0; i<6; i++)
+  {
+     if(logic_value()!= 1)
+      return;
+  }
+  
+  if(logic_value()!= 0)
+      return;
+      
+  if(logic_value()!= 1)
+      return;
+      
+  
+  
+  ir_code=0x00;
+  for(i=0; i<16;i++ )
+  {
+    if(logic_value() == 1)
+    {
+      ir_code |=(1<<i);
+    }
+  }
+}
+
+void DFRobot2WD::remote_decode(void)
+{
+     TCNT1=0X00;       
+     while(digitalRead(RECEPTEUR_IR))
+     {
+        if(TCNT1>=1563)
+        {
+             ir_code = 0xff00;
+             return;
+        }  
+     }
+     
+     
+     TCNT1=0X00;
+     
+     while(!(digitalRead(RECEPTEUR_IR)));
+     Pulse_Width=TCNT1;
+     TCNT1=0;
+     if(Pulse_Width>=140&&Pulse_Width<=141)//9ms
+     {
+         
+         while(digitalRead(RECEPTEUR_IR));
+         Pulse_Width=TCNT1;
+         TCNT1=0;
+         if(Pulse_Width>=68&&Pulse_Width<=72)//4.5ms
+         {
+            pulse_deal();
+            return;
+         }
+         else if(Pulse_Width>=34&&Pulse_Width<=36)//2.25ms
+         {
+            while(!(digitalRead(RECEPTEUR_IR)));
+            Pulse_Width=TCNT1;
+            TCNT1=0;
+            if(Pulse_Width>=7&&Pulse_Width<=10)//560us
+            {
+               return; 
+            }
+         }
+     }
+
 }
 // /**
  // * \fn void activeEncodeurs(void)
