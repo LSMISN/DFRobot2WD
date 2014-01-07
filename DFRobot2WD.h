@@ -124,7 +124,7 @@ class DFRobot2WD
   // uint16_t lireEncodeurD(void);
   // float lireFreqRG(void);
   // float lireFreqRD(void);
-  float lireCapteurLigne(int numeroCapteurDeLigneIR);
+  int lireCapteurLigne(int numeroCapteurDeLigneIR);
   uint16_t lireTelecommande(void);
   float lireTensionBatterie(void);
   

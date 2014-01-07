@@ -290,14 +290,14 @@ uint8_t DFRobot2WD::lireCompteurIR(void)
 	return compteurIR;
 }
 
-float DFRobot2WD::lireCapteurLigne(int numeroCapteurDeLigneIR)
+int DFRobot2WD::lireCapteurLigne(int numeroCapteurDeLigneIR)
 /**
  * \brief lit les capteurs de ligne IR connectés sur les entrées analogiques 0 à 3. 
  * \param numeroCapteurDeLigneIR : numéro d'un des 4 capteurs IR de ligne de 0 à 3
  * \return la tension lue par le image de la source IR réfléchie sous forme d'un float.
  *
- *	Il y a 4 capteurs à réflexion infrarouge sous l'avan du robot.
- * 	Cette fonction permet de lire la valeur de la tension du capteur qui proportionnelle à la lumière réfléchie sur le sol.
+ *	Il y a 5 capteurs à réflexion infrarouge sous l'avant du robot.
+ * 	Cette fonction permet de lire la valeur de la tension du capteur qui est proportionnelle à la lumière réfléchie sur le sol.
  *	En colorant le sol (ligne noir sur fond blanc par exemple), on peut détecter le chemin à suivre.
  * 	Exemple :
  *				float couleurSol = terminator.lireCapteurLigne(0); // stocke dans la variable une valeur image de la couleur (sombre ou claire) du sol
@@ -305,7 +305,8 @@ float DFRobot2WD::lireCapteurLigne(int numeroCapteurDeLigneIR)
  */
 {
 	if((numeroCapteurDeLigneIR >= 0) && (numeroCapteurDeLigneIR <= 3))
-		return (analogRead(numeroCapteurDeLigneIR)*5)/1024;
+		return analogRead(numeroCapteurDeLigneIR);
+		else if(numeroCapteurDeLigneIR == 4) return analogRead(7); // le dernier capteur est câblé sur A7
 }
 ISR(PCINT0_vect)// interruption capteur IR
 {
